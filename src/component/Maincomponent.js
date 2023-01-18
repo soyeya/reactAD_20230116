@@ -1,10 +1,11 @@
 import React from 'react';
 import Banner from './Banner';
 
+//cls = 
 function Maincomponent(props) {
     return (
     <div>
-        <Banner></Banner>
+        <Banner objid="mainBanner h-100"></Banner>
       <div>
       <div style={{height:"100vh"}} id = "process" className = "border-top"></div>
       <div style={{height:"100vh"}} id = "review" className = "border-top bg-dark"></div>
