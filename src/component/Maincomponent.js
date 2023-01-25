@@ -1,6 +1,7 @@
 import React from 'react';
 import Banner from './Banner';
 import Faq from './Faq';
+import Qna from './Qna';
 
 
 function Maincomponent() {
@@ -12,8 +13,9 @@ function Maincomponent() {
      <Faq></Faq>
       <div style={{height:"100vh"}} id = "review" className = "border-top bg-dark"></div>
       <div style={{height:"100vh"}} id = "qna" className = "border-top"></div>
-    </div>
-        </div>
+      <Qna></Qna>
+      </div>
+      </div>
     );
 }
 
