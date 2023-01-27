@@ -1,34 +1,89 @@
 import React, { useState } from 'react';
 
-const Qna = () => {
-    const [ password, setPassword ] = useState("");
-    const [ statue, updateStatue] = useState(false);
 
-    const changePw = ({ target : {value} }) => setPassword(value);
-    const sendform = async (e) => {
-        //폼태그는 기본적으로 새로고침한다.
-        //폼태그가 중복 실행되지않도록 막아야한다.
-        updateStatue(true); //버튼막아
+const Qna = () => {
+
+
+    //중복제출막기
+    const [statue, updateStatue] = useState(false);
+    const [values, setValues] = useState({
+        comNm: "",
+        email: "",
+        password: "",        
+        content: "",
+        
+      })
+    
+    const handleChange = (e) =>{
+        setValues({
+            ...values,
+            [e.target.name] : e.target.value
+        })
+        //input의 name을 변수이름과 같이 해서 식을 심플하게 처리
+    }
+   
+    const sendform = async(e) => {
         e = e || window.event;
-        e.preventDefault(); //싱글페이지니깐 새로고침하지마
-        await new Promise( (r) => setTimeout(r, 1000)) 
-        //동기화시키는중_ 내가 닫을 때까지 아래는 작동하지마!_ 자바스크립트는 순서있게 작동하는게 아니라 하극상을 많이 일으키는 존재이므로 가변적이다. (건너뛰고 실행하는 경우가 많음) = 이걸 사용하므로써 나 건너뛰고 실행하지마! 라고 시간을 만듦
-        alert(`수정된 비밀번호 확인해보기 ${password}`)       
-        updateStatue(false); // 다시버튼기능돌려줘
+        e.preventDefault(); //새로고침하지마
+        updateStatue(true); // 버튼막아
+        //데이터를 전송하거나 유효성검사
+        await new Promise( (r) => setTimeout(function(){
+          console.log(JSON.stringify(values, null, 10))  
+        }, 1000))
+        updateStatue(false); //버튼정상화ㄴ
     }
 
     return (
         <div id="qna" className='py-5'>
             <h2 className='text-center py-5'>문의하기</h2>
-            <form onSubmit={ sendform } className='col-6 mx-auto'>
-                <input type="password" 
-                       value={password} 
-                       name="pw"
-                       onChange={ changePw  }
-                         />
-                <button type="submit" disabled={statue}>변경하기</button>    
-                 {/* disabled = {statue} -> 중복처리되지 않도록 제어 역할 */}            
+
+           
+
+            <form onSubmit={ sendform } className='col-5 mx-auto'>
+                <ul>
+                    <li className='my-3'>                        
+                        <input type="text" 
+                               placeholder='회사명을 기입해주세요.' 
+                               name="comNm"
+                               value={values.comNm}
+                               className="w-100"
+                               onChange={ handleChange }
+                                 />
+                    </li>
+                    <li className='my-3'>                        
+                        <input type="text" 
+                               placeholder='이메일을 기입해주세요.' 
+                               name="email"
+                               value={values.email}
+                               className="w-100"
+                               onChange={ handleChange }
+                                 />
+                    </li>
+                    <li className='my-3'>                        
+                        <input type="password" 
+                               placeholder='패스워드을 기입해주세요.' 
+                               name="password"
+                               value={values.password}
+                               className="w-100"
+                               onChange={ handleChange }
+                                 />
+                    </li>
+                    <li className='my-3'>                        
+                        <input type="text" 
+                               placeholder='한줄메모을 기입해주세요.' 
+                               name="content"
+                               value={values.content}
+                               className="w-100"
+                               onChange={ handleChange }
+                                 />
+                    </li>
+                </ul>
+                <div className='d-flex justify-content-end py-3'>
+                    <button type="submit" disabled={statue}>문의하기</button> 
+                </div>               
+                               
             </form>            
+            
         </div>
     );
 }
