@@ -48,8 +48,12 @@ const Qna = () => {
         <div id="qna" className='py-5'>
             <h2 className='text-center py-5'>문의하기</h2>
 
-            <form onSubmit={handleSubmit(onSubmit)}>
-      <input
+            <form onSubmit={handleSubmit(onSubmit)} className='col-6 mx-auto'>
+              <ul>
+                <li className='mb-2'>
+                <input
+                placeholder='이메일'
+                className='w-100 d-block'
         type="email"
         {...register("email", {
           required: "Required",
@@ -59,22 +63,40 @@ const Qna = () => {
           }
         })}
       />
-         {/* errors.email = true 일때만 errors.email.message 나간다 라는 뜻 -> if문임 
+      {/* errors.email = true 일때만 errors.email.message 나간다 라는 뜻 -> if문임 
       formstate의 설정해둔 errors의 이메일 에러 메세지 출력*/}
       {errors.email && errors.email.message}  
+                </li>
+    
+
+      {/* <input
+        type="email"
+        {...register("email", {
+          required: "Required",
+          pattern: {
+            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+            message: "invalid email address"
+          }
+        })}
+      /> */}
+         {/* errors.email = true 일때만 errors.email.message 나간다 라는 뜻 -> if문임 
+      formstate의 설정해둔 errors의 이메일 에러 메세지 출력*/}
+      {/* {errors.email && errors.email.message}   */}
    
      
-
+      <li className='mb-2'>
       <input
+        className='w-100 d-block'
+        placeholder='이름'
         {...register("username", {
           validate: value => value !== "admin" || "Nice try!"
         })}
       />
       {errors.username && errors.username.message}
-
-      <button type="submit">Submit</button>
+  <p className='d-flex justify-content-end'>
+      <button type="submit">보내기</button></p>
+      </li></ul>
     </form>
-
 
             {/* <form onSubmit={ sendform } className='col-5 mx-auto'>
                 <ul>

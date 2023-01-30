@@ -51,6 +51,10 @@ body{
 
 }
 
+li a.active{
+
+  color: #eaeaea!important;
+}
 /*반응형*/
 
 @media (max-width:1023px){

@@ -3,6 +3,7 @@ import logo from '../logo.svg';
 import navicss from '../css/navi.module.css';
 import { Link } from 'react-router-dom';
 import Scrollspy from 'react-scrollspy';
+import navijson from '../json/navi.json';
 
 //npm i react-router-dom
 //npm install react-bootstrap bootstrap
@@ -11,7 +12,23 @@ import Scrollspy from 'react-scrollspy';
 function Navi() {
 
     const [ colorMode , updataColor ] = useState(true);
+    const [ activenum , updateactive ] = useState(-1); //처음 초기값은 불이 들어오지 않게 설계 _ 값이 없음
 
+ const naviactive = (e) => {
+
+    const navitag = e.target.parentElement.parentElement;  //a - li- ul까지 접근 왜? 인덱스번호추출하려고(li는 인덱스번호가 나오지 않는다)
+//태그요소를 정렬
+//[li, li, li, li]
+    // console.log(navitag.children.length); //4
+    //li태그들의 나열을 정렬데이터
+    const navitagArr = [...e.target.parentElement.parentElement.children] //정확하게 가공시킴
+    //숫자
+    const mynum = navitagArr.indexOf(e.target.parentElement);
+     //indexOf - 자릿수를 찾아줌 -> -1의 결과값이 나오는 경우? = 못찾았다는 뜻
+    updateactive(mynum); //화면을 새롭게 랜더링
+    console.log(activenum);
+
+ }
 
     return (
         <div className={colorMode ? 'lightmode fixed-top ' : 'darkmode fixed-top'}>
@@ -24,18 +41,19 @@ function Navi() {
         </h1>
         {/* 태그가 아닌 자바스크립트가 내장되어있는 실행식이다 */}
         <Scrollspy className='d-flex justify-content-between align-items-center'>
-            <li>
-                <Link to = "/about">뇌새김소개</Link>
-                </li>
-            <li>
-                <a href="#process">뇌새김의 학습원리</a>
-            </li>
-            <li>
-                <a href="#review">뇌새김의 후기</a>
-            </li>
-            <li>
-                <a href="#qna">문의하기</a>
-            </li>
+            {
+                navijson.nav.map((el, idx) => {
+
+                    return(
+
+                        <li key={'gnb' + idx}>
+                            <a href={el.href} onClick={naviactive} className = {
+                                activenum == idx ? 'active': null
+                            }>{el.title}</a>
+                        </li>
+                    )
+                })
+            }
         </Scrollspy>
         <ul id="sns" className='d-flex'>
             <li>

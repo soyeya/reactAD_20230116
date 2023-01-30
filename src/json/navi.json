@@ -1,0 +1,29 @@
+{
+
+    "nav" : [
+
+        {
+
+            "title" : "뇌새김소개",
+            "href" : "#top"
+        },
+
+        {
+
+            "title" : "뇌새김 학습의 원리",
+            "href" : "#process"
+        },
+
+        {
+
+            "title" : "뇌새김의 후기",
+            "href" : "#review"
+        },
+
+        {
+
+            "title" : "문의하기",
+            "href" : "#qna"
+        }
+    ]
+}
