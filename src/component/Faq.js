@@ -7,7 +7,7 @@ const Faq = () => {
    
     return (
         <div id="faq" className='container py-5'>
-<h2 className='text-center pt-5 pb-3'>묻고 답하기</h2>                
+<h2 className='text-center pt-5 pb-3'>Q & A</h2>                
 <ul className='border col-8 mx-auto p-4'>
 {
     faqdb.faqlist.map((el, idx)=>{
@@ -15,13 +15,13 @@ const Faq = () => {
         var listArr = el.faqContent.split('/'); 
         return (
             <li key={ 'faqcom'+ idx }>
-                <strong role="button" 
+                <strong role="button" className='faq_Btn p-3 d-block'
                 onClick={ e => { 
                     e = e || window.event;
                     e.target.nextSibling.classList.toggle('d-none')
                     }}>{el.faqtitle}
                 </strong>
-                <p className='d-none bg-dark text-white py-3'>
+                <p className='d-none p-3 faq_answer'>
                     {/* \n -> json에서 문자떨어짐보다는 엔터를 못쓰니까 사용 */}
                     {
                    

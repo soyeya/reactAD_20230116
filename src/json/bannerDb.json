@@ -2,7 +2,7 @@
     "mainBanner" : [
 
         {
-            "title" : ["h2태그에 삽입되는 큰 타이틀" , "p태그에 들어가는 작은 설명문구"],
+            "title" : ["React 수업 이수하기" , "Github.io페이지 만들기"],
             "type" : "a" , 
             "href" :["http://www.github.com" , "_blank"],
             "cls" : ["event", "bg-light"]
@@ -10,18 +10,18 @@
         },
 
         {
-            "title" : ["두번째기획배너이름" , "작은 설명문구"],
+            "title" : ["React with Node.js" , "React 구동하기"],
             "type": "Link" , 
             "href" :["/promotion2" , ""],
-            "cls" : ["project", "bg-danger"]
+            "cls" : ["project", "bg-secondary"]
 
         },
 
         {
-            "title" : ["세번째기획배너이름" , "작은 설명문구"],
+            "title" : ["github" , "React 페이지만들기"],
             "type" : "Link" , 
             "href" :["/promotion3" , ""],
-            "cls" : ["project", "bg-info"]
+            "cls" : ["project", "bg-success"]
 
         }
 

@@ -4,25 +4,25 @@
 
         {
 
-            "title" : "뇌새김소개",
+            "title" : "Introduce",
             "href" : "#top"
         },
 
         {
 
-            "title" : "뇌새김 학습의 원리",
+            "title" : "Javascript",
             "href" : "#process"
         },
 
         {
 
-            "title" : "뇌새김의 후기",
+            "title" : "React",
             "href" : "#review"
         },
 
         {
 
-            "title" : "문의하기",
+            "title" : "Design",
             "href" : "#qna"
         }
     ]

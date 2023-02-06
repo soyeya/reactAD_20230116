@@ -3,15 +3,15 @@
     "faqlist" : [
         {
             "faqtitle" : "질문과 답은 글자로만 되어있으니 로딩할때 그냥 부르자",
-            "faqContent" : "리액트는 가난한 살림 \n  가게부 잘 써야해 \n  세번째 줄내용"
+            "faqContent" : "문단 나누는 차이를 확인 \n  스크립트 공부하자 \n  세번째 문단"
         },
         {
-            "faqtitle" : "두번째 질문",
-            "faqContent" : "리액트는 가난한 살림 \n  가게부 잘 써야해 / 세번째 줄내용"
+            "faqtitle" : "데이터는 Jason으로 따로 만들자",
+            "faqContent" : "React_form \n  React_Bootstrap / React는 비동기통신"
         },
         {
             "faqtitle" : "이미지 동영상은 비동기로 호출",
-            "faqContent" : "리액트는 가난한 살림 / 가게부 잘 써야해 / 세번째 줄내용"
+            "faqContent" : "UseState / UseEffect / UseForm 호출해서 쓰되 하드코딩할 줄 알기"
         }
     ]
 }

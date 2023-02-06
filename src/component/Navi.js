@@ -46,7 +46,7 @@ function Navi() {
 
                     return(
 
-                        <li key={'gnb' + idx}>
+                        <li key={'gnb' + idx} className= 'nav_category'>
                             <a href={el.href} onClick={naviactive} className = {
                                 activenum == idx ? 'active': null
                             }>{el.title}</a>
@@ -57,13 +57,13 @@ function Navi() {
         </Scrollspy>
         <ul id="sns" className='d-flex'>
             <li>
-                <a href="http://www.youtube.com" target="_blank">유투브</a>
+                <a href="http://www.youtube.com" target="_blank">Behance</a>
             </li>
             <li>
-                <a href="http://www.youtube.com" target="_blank">자료실</a>
+                <a href="http://www.youtube.com" target="_blank">GitHub</a>
             </li>
             <li>
-                <button style={{border : "none" , background : "#eee" , borderRadius : "3px" , textTransform : "uppercase" , padding : "3px"}}onClick={() => {
+                <button style={{border : "none" , background : "#eaeaea" , borderRadius : "0px" , textTransform : "uppercase" , padding : "6px" , fontSize: "13px"}}onClick={() => {
                   updataColor(!colorMode)}}> {colorMode ? 'lightmode' : 'darkmode'}</button> 
                   {/* 글자를 나타났다 숨겼다 하는 장치 */}
             </li>

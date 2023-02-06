@@ -55,6 +55,113 @@ li a.active{
 
   color: #eaeaea!important;
 }
+
+.bg-light{
+
+  background-image: url(../public/slide2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  width: 100%;
+  height: 100%;
+
+}
+
+.bg-secondary{
+
+  background-image: url(../public/slide1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  width: 100%;
+  height: 100%;
+
+}
+
+.bg-success{
+
+  background-image: url(../public/slide5.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  width: 100%;
+  height: 100%;
+
+}
+
+.bannerTitle{
+
+  font-size: 40px;
+  text-transform: uppercase;
+  font-weight: 700;
+
+}
+
+.mainBanner_text{
+
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color:#ccc;
+  background-color: rgba(0,0,0,.7);
+}
+
+.mainBanner_text:hover{
+
+  background-color: rgba(0,0,0,.4);
+  color:#ffffff;
+  /* text-shadow: 0.3px 0.3px 3px rgb(182, 215, 255); */
+  transition: 0.3s;
+}
+
+
+.mainBanner_text:hover .bannerTitle{
+
+  text-shadow: 0.3px 0.3px 3px rgb(182, 215, 255);
+  transition: 0.3s;
+
+}
+.bannerSubtitle{
+
+  font-size: 22px;
+  
+}
+
+.main_banner_btn{
+
+  color:#eaeaea;
+  font-size: 17px;
+}
+
+.main_banner_btn:hover{
+ 
+  color:#ccc;
+}
+
+.faq_Btn{
+
+ font-size: 16px;
+ letter-spacing: 3px;
+ font-weight: 300;
+
+}
+
+.faq_Btn:hover{
+
+  font-weight: 500;
+}
+
+.faq_answer{
+
+  font-size: 13px;
+  border-top:1px solid #ddd;
+  color:rgb(68, 67, 67);
+  font-weight: 200;
+
+}
 /*반응형*/
 
 @media (max-width:1023px){

@@ -28,7 +28,7 @@ function Banner(props) {
             centeredSlides = {true}
      modules={[ Pagination, Autoplay ]}
       spaceBetween={50}
-      slidesPerView={2.0}
+      slidesPerView={1.0}
 
     >
 
@@ -36,16 +36,16 @@ function Banner(props) {
              bannerDb.mainBanner.map((value,idx) => {
     
               return (  <SwiperSlide key={'sw' + idx }className={ mbanner.item + " " + value.cls.join(" ")}>
-                <div>
-                    <h2>
+                <div className='d-flex flex-column align-items-center mainBanner_text'>
+                    <h2 class='bannerTitle'>
                         {value.title[0]}
                         </h2>
-                        <p>
+                        <p className='bannerSubtitle'>
                         {value.title[1]}
                         </p>
                         {
-                         value.type == "a" ? <a href={ value.href[0] } target={ value.href[1]}>바로가기</a> :
-                         <Link to ={value.href[0]}>바로가기</Link>
+                         value.type == "a" ? <a href={ value.href[0] } target={ value.href[1]} className='main_banner_btn'>바로가기</a> :
+                         <Link to ={value.href[0]} className='main_banner_btn'>바로가기</Link>
                         }
                    
                 </div>
